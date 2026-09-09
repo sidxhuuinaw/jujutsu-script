@@ -1,0 +1,38 @@
+branch "test" {
+	-- do other stuff
+}
+
+-- any of these fields can be left blank to set them to their defaults
+skill "identifier" [
+	name: "Move Name",
+	cooldown: 0,
+	key: 1,
+	add: false,
+	tooltip: "",
+	-- again, any property fields can be left blank to use defaults
+	-- (or "props" can be completely excluded to set all of them to
+	-- their defaults)
+	props: [
+		damagemulti: 1,
+		knockbackmulti: 1,
+		invicible: false,
+		replaceifoccupied: false,
+		preventoverride: false,
+		hideinawakening: false,
+		keepwhenswitch: false,
+		hideinbase: false,
+		usewhenobtained: false,
+		useondeath: false,
+		nostun: false,
+		nocancel: false,
+		varianttag: "",
+	],
+	-- "default" takes in a branch (defined with {})
+	-- a branch node or "jump" keyword can be used to jump
+	-- to another branch defined outside of the skill
+	-- branches are automatically included in a skill as needed
+	default: {
+		-- do some stuff
+		jump "test"
+	}
+]
