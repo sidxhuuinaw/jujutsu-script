@@ -2,8 +2,18 @@ branch "test" {
 	-- do other stuff
 }
 
+-- branch with conditions:
+conditional "test2" [
+	conditions: [
+		
+	],
+	branch: {
+		
+	}
+]
+
 -- any of these fields can be left blank to set them to their defaults
-skill "identifier" [
+skill [
 	name: "Move Name",
 	cooldown: 0,
 	key: 1,
@@ -36,3 +46,13 @@ skill "identifier" [
 		jump "test"
 	}
 ]
+
+branch "b" {}
+
+branch "a" {
+	lasthit [
+		time: 5,
+		run: {jump "b"}
+	]
+
+}
